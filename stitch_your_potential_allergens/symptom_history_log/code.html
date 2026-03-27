@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Symptom History - AllergyCare</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2a5d83",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#141a1e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="sticky top-0 z-10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="px-4 pt-6 pb-4">
+<div class="flex items-center justify-between mb-4">
+<button class="p-2 -ml-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold text-primary tracking-tight">Symptom History</h1>
+<button class="p-2 -mr-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary">more_vert</span>
+</button>
+</div>
+<!-- Search Bar -->
+<div class="relative flex items-center gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary/60 text-xl">search</span>
+<input class="w-full bg-primary/5 border-none rounded-xl py-3 pl-10 pr-4 focus:ring-2 focus:ring-primary/20 text-sm placeholder:text-primary/40" placeholder="Search symptoms or triggers..." type="text"/>
+</div>
+<button class="bg-primary/10 p-3 rounded-xl text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+<!-- Quick Filters -->
+<div class="flex gap-2 px-4 pb-4 overflow-x-auto no-scrollbar">
+<button class="whitespace-nowrap bg-primary text-white px-4 py-1.5 rounded-full text-xs font-medium">All Time</button>
+<button class="whitespace-nowrap bg-white dark:bg-slate-800 border border-primary/10 px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300">High Severity</button>
+<button class="whitespace-nowrap bg-white dark:bg-slate-800 border border-primary/10 px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300">Pollen</button>
+<button class="whitespace-nowrap bg-white dark:bg-slate-800 border border-primary/10 px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300">Dust Mites</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-4 py-6 max-w-2xl mx-auto w-full">
+<!-- Month Header -->
+<div class="flex items-center gap-3 mb-4">
+<h2 class="text-sm font-bold uppercase tracking-widest text-primary/60">October 2023</h2>
+<div class="h-px flex-1 bg-primary/10"></div>
+</div>
+<!-- History Entry 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 mb-4 shadow-sm border border-primary/5 relative overflow-hidden group active:scale-[0.98] transition-transform">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-red-500"></div>
+<div class="flex justify-between items-start mb-3">
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Oct 24, 2023 • 10:30 AM</p>
+<h3 class="font-bold text-slate-800 dark:text-slate-100">Severe Reaction</h3>
+</div>
+<div class="flex items-center gap-1 bg-primary/5 px-2 py-1 rounded text-primary">
+<span class="material-symbols-outlined text-sm">bed</span>
+<span class="text-[10px] font-bold uppercase">Dust Mites</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400">Sneezing</span>
+<span class="bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400">Shortness of breath</span>
+<span class="bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400">Itchy Throat</span>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-slate-50 dark:border-slate-800">
+<span class="text-xs text-primary font-medium flex items-center gap-1">View Full Report <span class="material-symbols-outlined text-xs">chevron_right</span></span>
+<span class="text-[10px] font-medium text-slate-400 italic">Severity: 8/10</span>
+</div>
+</div>
+<!-- History Entry 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 mb-4 shadow-sm border border-primary/5 relative overflow-hidden group active:scale-[0.98] transition-transform">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-amber-400"></div>
+<div class="flex justify-between items-start mb-3">
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Oct 20, 2023 • 08:15 AM</p>
+<h3 class="font-bold text-slate-800 dark:text-slate-100">Morning Flare-up</h3>
+</div>
+<div class="flex items-center gap-1 bg-primary/5 px-2 py-1 rounded text-primary">
+<span class="material-symbols-outlined text-sm">grass</span>
+<span class="text-[10px] font-bold uppercase">Pollen</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400">Runny Nose</span>
+<span class="bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400">Watery Eyes</span>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-slate-50 dark:border-slate-800">
+<span class="text-xs text-primary font-medium flex items-center gap-1">View Full Report <span class="material-symbols-outlined text-xs">chevron_right</span></span>
+<span class="text-[10px] font-medium text-slate-400 italic">Severity: 4/10</span>
+</div>
+</div>
+<!-- Month Header -->
+<div class="flex items-center gap-3 mb-4 mt-8">
+<h2 class="text-sm font-bold uppercase tracking-widest text-primary/60">September 2023</h2>
+<div class="h-px flex-1 bg-primary/10"></div>
+</div>
+<!-- History Entry 3 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 mb-4 shadow-sm border border-primary/5 relative overflow-hidden group active:scale-[0.98] transition-transform">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-emerald-400"></div>
+<div class="flex justify-between items-start mb-3">
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Sep 12, 2023 • 02:45 PM</p>
+<h3 class="font-bold text-slate-800 dark:text-slate-100">Mild Itching</h3>
+</div>
+<div class="flex items-center gap-1 bg-primary/5 px-2 py-1 rounded text-primary">
+<span class="material-symbols-outlined text-sm">pets</span>
+<span class="text-[10px] font-bold uppercase">Pet Dander</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400">Skin Rash</span>
+<span class="bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400">Hives</span>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-slate-50 dark:border-slate-800">
+<span class="text-xs text-primary font-medium flex items-center gap-1">View Full Report <span class="material-symbols-outlined text-xs">chevron_right</span></span>
+<span class="text-[10px] font-medium text-slate-400 italic">Severity: 2/10</span>
+</div>
+</div>
+<!-- Entry with Gradient Placeholder for image requirement compliance -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 mb-20 shadow-sm border border-primary/5 relative overflow-hidden">
+<div class="absolute inset-0 opacity-5 pointer-events-none">
+<div class="w-full h-full bg-gradient-to-br from-primary to-transparent" data-alt="Abstract blue gradient medical background pattern"></div>
+</div>
+<div class="flex items-center justify-center py-4 flex-col gap-2">
+<span class="material-symbols-outlined text-primary/40 text-4xl">history</span>
+<p class="text-sm text-slate-400 font-medium">End of log for the past 90 days</p>
+<button class="mt-2 text-primary text-xs font-bold border border-primary/20 px-4 py-2 rounded-lg hover:bg-primary/5">LOAD MORE</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-primary/10 px-4 pb-6 pt-2">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">home</span>
+<span class="text-[10px] font-bold text-slate-400 group-hover:text-primary uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">medical_services</span>
+<span class="text-[10px] font-bold text-slate-400 group-hover:text-primary uppercase tracking-tighter">Checker</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="relative">
+<span class="material-symbols-outlined active-icon text-primary">history</span>
+<div class="absolute -top-1 -right-1 w-1.5 h-1.5 bg-primary rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">History</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">person</span>
+<span class="text-[10px] font-bold text-slate-400 group-hover:text-primary uppercase tracking-tighter">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Clinical Azure - AI Symptom Checker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#001d31",
+              "on-tertiary-container": "#121516",
+              "surface-dim": "#d9dadd",
+              "inverse-on-surface": "#f0f0f4",
+              "error-container": "#ffdad6",
+              "outline": "#72787f",
+              "secondary-fixed-dim": "#b7c8db",
+              "on-primary": "#ffffff",
+              "surface-container-highest": "#e2e2e6",
+              "surface-bright": "#ffffff",
+              "surface-tint": "#2a5d83",
+              "on-secondary-fixed": "#0b1d2b",
+              "on-tertiary-fixed": "#291800",
+              "inverse-surface": "#2e3133",
+              "surface-container-high": "#e7e8eb",
+              "primary-fixed-dim": "#9ccbf7",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "background": "#f6f7f8",
+              "on-secondary": "#ffffff",
+              "on-background": "#121516",
+              "tertiary-fixed": "#ffddb4",
+              "on-tertiary-fixed-variant": "#633f00",
+              "on-error": "#ffffff",
+              "outline-variant": "rgba(42, 93, 131, 0.1)",
+              "on-primary-fixed-variant": "#114a70",
+              "secondary-container": "rgba(42, 93, 131, 0.05)",
+              "on-surface-variant": "#4a5568",
+              "secondary": "#4a5568",
+              "surface-container-low": "#f6f7f8",
+              "tertiary-container": "#edeef1",
+              "primary-container": "#2a5d83",
+              "on-primary-container": "#ffffff",
+              "on-surface": "#121516",
+              "primary": "#2a5d83",
+              "surface": "#f6f7f8",
+              "on-secondary-fixed-variant": "#384858",
+              "surface-container": "#edeef1",
+              "on-secondary-container": "#2a5d83",
+              "tertiary-fixed-dim": "#f3bd74",
+              "inverse-primary": "#9ccbf7",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#ffffff",
+              "tertiary": "#6a7781",
+              "secondary-fixed": "#d3e4f8",
+              "on-error-container": "#93000a",
+              "primary-fixed": "#cce5ff"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md fixed top-0 w-full z-50 shadow-sm dark:shadow-none">
+<div class="flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional man in a clean studio setting with soft natural lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz8Y-jtiCE45pUz9y_uzw65eXAM5ne8TGHI-i1m1i1pqvh49JlXP9pj4twSiS7lSgb67HXIHtHrQT-sDMWV_fIjUrL63qcizmHJ8qNF8ujHbQPzUamOLowcyKoc4RfFhtOHAVU__K91_KVla27PFJm5XurqhDxWY3EC7K3N3un8ThiZz58wH1XKbv3OMvbmCb0fwonu7wjxscNFqJPTeVpfR-_AhrLkfMMqxCvuQ02fBOO5h4cxt-MDCm4IzA-VR4T8agIQfFE3tU"/>
+</div>
+<h1 class="text-xl font-black text-[#2a5d83] dark:text-blue-400 tracking-[-0.03em]">Clinical Azure</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 mt-16 mb-20 overflow-y-auto px-4 md:px-8 py-6 max-w-4xl mx-auto w-full flex flex-col gap-6">
+<!-- Date Marker -->
+<div class="flex justify-center">
+<span class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant/50 bg-surface-container-high px-3 py-1 rounded-full">Today</span>
+</div>
+<!-- Chat History -->
+<div class="flex flex-col gap-8">
+<!-- User Message -->
+<div class="flex flex-col items-end gap-2 max-w-[85%] self-end">
+<div class="bg-primary text-on-primary-container px-5 py-4 rounded-2xl rounded-tr-sm shadow-md">
+<p class="body-medium leading-relaxed">I've been sneezing a lot since this morning. It's constant and my eyes are starting to feel itchy too. What could be causing this?</p>
+</div>
+<span class="text-[10px] font-medium text-on-surface-variant/60 mr-1">09:41 AM</span>
+</div>
+<!-- AI Assistant Message -->
+<div class="flex flex-col items-start gap-3 max-w-[90%]">
+<div class="flex items-center gap-2 mb-1">
+<div class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<span class="text-xs font-black tracking-tight text-primary uppercase">Clinical Assistant</span>
+</div>
+<div class="bg-white border border-outline-variant/10 p-5 rounded-2xl rounded-tl-sm shadow-sm flex flex-col gap-4">
+<p class="text-on-surface leading-relaxed">Based on your symptoms of frequent sneezing combined with itchy eyes, this strongly suggests an allergic reaction, likely to airborne particles.</p>
+<!-- Bento Grid for Potential Allergens -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+<div class="bg-secondary-container p-4 rounded-xl border border-primary/5">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary">allergies</span>
+<h3 class="font-bold text-sm">Seasonal Pollen</h3>
+</div>
+<p class="text-xs text-on-surface-variant leading-normal">Tree and grass pollen levels are currently "High" in your area today.</p>
+</div>
+<div class="bg-secondary-container p-4 rounded-xl border border-primary/5">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary">house</span>
+<h3 class="font-bold text-sm">Dust Mites</h3>
+</div>
+<p class="text-xs text-on-surface-variant leading-normal">Common indoor triggers if symptoms worsen while cleaning or waking up.</p>
+</div>
+</div>
+<p class="text-on-surface leading-relaxed">Have you been outdoors recently, or perhaps introduced a new pet or plant to your environment?</p>
+</div>
+<span class="text-[10px] font-medium text-on-surface-variant/60 ml-1">09:42 AM</span>
+</div>
+<!-- User Message 2 -->
+<div class="flex flex-col items-end gap-2 max-w-[85%] self-end">
+<div class="bg-primary text-on-primary-container px-5 py-4 rounded-2xl rounded-tr-sm shadow-md">
+<p class="body-medium leading-relaxed">I was walking in the park for about an hour earlier. The sneezing started right after I got home.</p>
+</div>
+<span class="text-[10px] font-medium text-on-surface-variant/60 mr-1">09:44 AM</span>
+</div>
+<!-- AI Assistant Message 2 -->
+<div class="flex flex-col items-start gap-3 max-w-[90%]">
+<div class="flex items-center gap-2 mb-1">
+<div class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<span class="text-xs font-black tracking-tight text-primary uppercase">Clinical Assistant</span>
+</div>
+<div class="bg-white border border-outline-variant/10 p-5 rounded-2xl rounded-tl-sm shadow-sm flex flex-col gap-4">
+<p class="text-on-surface leading-relaxed">The timing indicates a high probability of <span class="font-bold text-primary">Pollen-Induced Allergic Rhinitis</span>. Walking in the park exposed you to high concentrations of environmental allergens.</p>
+<div class="bg-primary/5 rounded-xl p-4 border-l-4 border-primary">
+<h4 class="text-xs font-bold text-primary mb-1 uppercase tracking-wider">Recommended Next Steps:</h4>
+<ul class="text-sm space-y-2">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+<span>Rinse your face and eyes with cool water.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+<span>Consider an over-the-counter antihistamine.</span>
+</li>
+</ul>
+</div>
+</div>
+<span class="text-[10px] font-medium text-on-surface-variant/60 ml-1">09:45 AM</span>
+</div>
+</div>
+<!-- Spacer for input overlap -->
+<div class="h-12"></div>
+</main>
+<!-- Chat Input Floating Field -->
+<div class="fixed bottom-24 left-0 w-full px-4 md:px-8 z-40 pointer-events-none">
+<div class="max-w-4xl mx-auto pointer-events-auto">
+<div class="bg-white/95 backdrop-blur-xl border border-outline-variant/20 rounded-2xl shadow-xl p-2 flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-slate-400 py-3 px-2" placeholder="Describe your symptoms..." type="text"/>
+<button class="bg-[#2a5d83] text-white w-10 h-10 rounded-xl flex items-center justify-center shadow-md active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-[#2a5d83]/10 dark:border-blue-900/20 shadow-lg dark:shadow-none">
+<div class="flex justify-around items-center w-full px-2 h-20">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 hover:text-[#2a5d83] dark:hover:text-blue-400 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[11px] font-bold uppercase tracking-wider Inter mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 hover:text-[#2a5d83] dark:hover:text-blue-400 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span class="text-[11px] font-bold uppercase tracking-wider Inter mt-1">Checker</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 hover:text-[#2a5d83] dark:hover:text-blue-400 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="text-[11px] font-bold uppercase tracking-wider Inter mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#2a5d83]/10 dark:bg-blue-900/40 text-[#2a5d83] dark:text-blue-300 rounded-2xl px-4 py-2 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<span class="text-[11px] font-bold uppercase tracking-wider Inter mt-1">AI Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 hover:text-[#2a5d83] dark:hover:text-blue-400 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[11px] font-bold uppercase tracking-wider Inter mt-1">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,29 @@
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-primary/10 px-4 py-3 flex items-center justify-between">
+  <div class="flex items-center gap-2 cursor-pointer" routerLink="/">
+    <div class="bg-primary p-1.5 rounded-lg text-white">
+      <span class="material-symbols-outlined text-2xl block">health_metrics</span>
+    </div>
+    <span class="text-primary font-bold text-lg tracking-tight">AllergyCare</span>
+  </div>
+
+  <div class="hidden md:flex items-center gap-6">
+    <a routerLink="/" class="text-[#4a5568] hover:text-primary font-medium">Home</a>
+    <a routerLink="/symptom-log" *ngIf="isLoggedIn" class="text-[#4a5568] hover:text-primary font-medium">Log Symptom</a>
+    <a routerLink="/history" *ngIf="isLoggedIn" class="text-[#4a5568] hover:text-primary font-medium">History</a>
+    <button *ngIf="!isLoggedIn" routerLink="/login" class="bg-primary text-white px-4 py-2 rounded-lg font-bold">Login</button>
+    <button *ngIf="isLoggedIn" (click)="logout()" class="text-primary border border-primary px-4 py-2 rounded-lg font-bold">Logout</button>
+  </div>
+
+  <button class="md:hidden text-primary p-2 hover:bg-primary/5 rounded-full transition-colors" (click)="toggleMenu()">
+    <span class="material-symbols-outlined text-3xl">{{ isMenuOpen ? 'close' : 'menu' }}</span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div *ngIf="isMenuOpen" class="md:hidden bg-white border-b border-primary/10 p-4 flex flex-col gap-4 animate-slide-down">
+  <a routerLink="/" (click)="toggleMenu()" class="text-primary font-bold">Home</a>
+  <a routerLink="/symptom-log" *ngIf="isLoggedIn" (click)="toggleMenu()" class="text-primary font-bold">Log Symptom</a>
+  <a routerLink="/history" *ngIf="isLoggedIn" (click)="toggleMenu()" class="text-primary font-bold">History</a>
+  <button *ngIf="!isLoggedIn" routerLink="/login" (click)="toggleMenu()" class="bg-primary text-white py-3 rounded-xl font-bold">Login</button>
+  <button *ngIf="isLoggedIn" (click)="logout(); toggleMenu()" class="text-primary border border-primary py-3 rounded-xl font-bold">Logout</button>
+</div>

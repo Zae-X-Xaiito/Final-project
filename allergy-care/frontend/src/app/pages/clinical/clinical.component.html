@@ -1,0 +1,64 @@
+<main class="flex-1 mt-16 mb-24 overflow-y-auto px-4 md:px-8 py-8 max-w-4xl mx-auto w-full animate-in fade-in duration-700">
+  <section class="bg-white rounded-[40px] p-8 md:p-12 border border-primary/5 shadow-2xl relative overflow-hidden group">
+    <div class="absolute -right-20 -top-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl group-hover:bg-accent/5 transition-colors duration-1000"></div>
+    <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-accent/5 rounded-full blur-3xl group-hover:bg-primary/5 transition-colors duration-1000"></div>
+    
+    <div class="relative z-10">
+      <span class="text-[11px] font-black uppercase tracking-[0.3em] text-accent mb-4 block animate-in slide-in-from-left duration-500">Design System v1.0</span>
+      <h1 class="text-5xl font-black text-primary tracking-tight leading-none mb-6 animate-in slide-in-from-left duration-700">Clinical Azure</h1>
+      <p class="text-xl text-ghost font-medium mb-12 max-w-2xl leading-relaxed animate-in slide-in-from-left duration-1000">A trusted medical interface bridging utility with wellness through precise tokens and tonal layering.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Color Palette -->
+        <div class="space-y-6">
+          <h2 class="text-xs font-black text-primary uppercase tracking-widest border-b border-primary/10 pb-2">Color Tokens</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-2">
+              <div class="w-full h-16 bg-primary rounded-2xl shadow-lg border border-white/20"></div>
+              <p class="text-[10px] font-bold text-primary uppercase">Medical Navy<br><span class="text-ghost opacity-60">#2C3E50</span></p>
+            </div>
+            <div class="space-y-2">
+              <div class="w-full h-16 bg-accent rounded-2xl shadow-lg border border-white/20"></div>
+              <p class="text-[10px] font-bold text-primary uppercase">Clinical Teal<br><span class="text-ghost opacity-60">#16A085</span></p>
+            </div>
+            <div class="space-y-2">
+              <div class="w-full h-16 bg-red-500 rounded-2xl shadow-lg border border-white/20"></div>
+              <p class="text-[10px] font-bold text-primary uppercase">Critical Alert<br><span class="text-ghost opacity-60">#EF4444</span></p>
+            </div>
+            <div class="space-y-2">
+              <div class="w-full h-16 bg-slate-50 rounded-2xl shadow-inner border border-primary/5"></div>
+              <p class="text-[10px] font-bold text-primary uppercase">Surface White<br><span class="text-ghost opacity-60">#F8FAFC</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typography -->
+        <div class="space-y-6">
+          <h2 class="text-xs font-black text-primary uppercase tracking-widest border-b border-primary/10 pb-2">Typography (Inter)</h2>
+          <div class="space-y-4">
+            <div class="p-4 bg-slate-50 rounded-2xl border border-primary/5">
+              <p class="text-4xl font-black tracking-tighter text-primary">H1 Black</p>
+              <p class="text-[10px] text-ghost font-bold uppercase mt-1">900 Weight • -0.05em Tracking</p>
+            </div>
+            <div class="flex items-center justify-between px-2">
+              <p class="text-lg font-bold text-primary">Body Medium</p>
+              <p class="text-xs text-ghost">500 Weight</p>
+            </div>
+            <div class="flex items-center justify-between px-2">
+              <p class="text-sm font-black uppercase tracking-widest text-[#16A085]">CTA Detail</p>
+              <p class="text-[10px] text-ghost">900 Weight</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 bg-primary/5 rounded-[32px] p-8 border border-primary/5 flex flex-col md:flex-row items-center gap-8">
+        <div class="flex-1 text-center md:text-left">
+          <h3 class="text-2xl font-black text-primary mb-2">Build Ready</h3>
+          <p class="text-sm text-ghost font-medium">This interface uses 100% standard Tailwind JIT tokens for modular clinical expansion.</p>
+        </div>
+        <button class="w-full md:w-auto px-10 h-14 bg-primary text-white rounded-2xl font-black uppercase text-xs tracking-[0.2em] shadow-xl hover:bg-accent hover:scale-105 active:scale-95 transition-all duration-300" routerLink="/welcome">View Live App</button>
+      </div>
+    </div>
+  </section>
+</main>

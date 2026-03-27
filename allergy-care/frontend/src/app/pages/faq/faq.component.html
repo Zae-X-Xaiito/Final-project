@@ -1,0 +1,72 @@
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-primary/10 flex items-center justify-between px-6 h-16">
+  <div class="flex items-center gap-4">
+    <button class="p-2 rounded-full hover:bg-primary/5 transition-colors" routerLink="/">
+      <span class="material-symbols-outlined text-primary">menu</span>
+    </button>
+    <h1 class="text-xl font-black text-primary tracking-[-0.03em] leading-[1.1]">AllergyCare</h1>
+  </div>
+  <div class="flex items-center gap-4">
+    <img alt="User profile" class="w-8 h-8 rounded-full object-cover border-2 border-primary/20" src="assets/images/placeholder_doctor.png" />
+  </div>
+</header>
+
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-5xl mx-auto">
+  <section class="mb-12">
+    <h2 class="text-[36px] font-black tracking-[-0.03em] leading-[1.1] text-primary mb-4">How can we help?</h2>
+    <p class="text-lg text-[#4a5568] mb-8 max-w-2xl">Find clinical guidance, app tutorials, and security information to manage your allergy health journey with confidence.</p>
+    <div class="relative group">
+      <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/60">search</span>
+      <input class="w-full h-16 pl-12 pr-6 rounded-xl border-none bg-white shadow-sm focus:ring-2 focus:ring-primary transition-all text-[#121516] placeholder:text-slate-400" placeholder="Search for allergies, symptoms, or account help..." type="text"/>
+    </div>
+  </section>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div class="bg-primary p-8 rounded-2xl text-white shadow-xl relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+      <div class="relative z-10">
+        <span class="material-symbols-outlined text-4xl mb-4">clinical_notes</span>
+        <h3 class="text-xl font-black mb-2">Common Allergies</h3>
+        <p class="text-white/80 text-sm">Clinical insights on triggers and management.</p>
+      </div>
+      <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
+    </div>
+    <div class="bg-white p-8 rounded-2xl shadow-sm border border-primary/5 hover:border-primary/20 transition-colors cursor-pointer">
+      <span class="material-symbols-outlined text-4xl mb-4 text-primary">smartphone</span>
+      <h3 class="text-xl font-black text-primary mb-2">App Usage</h3>
+      <p class="text-[#4a5568] text-sm">Mastering the AllergyMap and health logs.</p>
+    </div>
+    <div class="bg-white p-8 rounded-2xl shadow-sm border border-primary/5 hover:border-primary/20 transition-colors cursor-pointer">
+      <span class="material-symbols-outlined text-4xl mb-4 text-primary">security</span>
+      <h3 class="text-xl font-black text-primary mb-2">Account Security</h3>
+      <p class="text-[#4a5568] text-sm">Privacy protocols and data protection.</p>
+    </div>
+  </div>
+
+  <div class="space-y-12">
+    <section>
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-1 h-8 bg-primary rounded-full"></div>
+        <h3 class="text-2xl font-black tracking-tight text-[#121516]">Common Allergies</h3>
+      </div>
+      <div class="space-y-4">
+        <details class="group bg-white rounded-xl shadow-sm border border-primary/5 overflow-hidden" open>
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="font-bold text-primary">How do I identify seasonal allergy triggers?</span>
+            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 text-[#4a5568] leading-relaxed border-t border-primary/5 pt-4">
+            Seasonal triggers are typically environmental. AllergyCare suggests monitoring the <span class="text-primary font-medium">Allergy Map</span> daily to correlate your symptom peaks with local pollen counts.
+          </div>
+        </details>
+      </div>
+    </section>
+  </div>
+
+  <section class="mt-20 bg-primary/5 rounded-2xl p-8 md:p-12 text-center border border-primary/10">
+    <h3 class="text-[30px] font-black text-primary mb-4 tracking-tight">Still need help?</h3>
+    <p class="text-[#4a5568] mb-8 max-w-xl mx-auto">Our clinical support team is available 24/7 for technical issues and general guidance.</p>
+    <button class="inline-flex items-center justify-center h-14 px-8 bg-primary text-white font-bold rounded-xl shadow-md hover:scale-105 active:scale-95 transition-all gap-2" routerLink="/contact">
+      <span class="material-symbols-outlined">contact_support</span>
+      Contact Us
+    </button>
+  </section>
+</main>

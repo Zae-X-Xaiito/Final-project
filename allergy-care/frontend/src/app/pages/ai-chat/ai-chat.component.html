@@ -1,0 +1,121 @@
+<!-- TopAppBar -->
+<header class="bg-white/90 backdrop-blur-md fixed top-0 w-full z-50 shadow-sm">
+  <div class="flex items-center justify-between px-6 h-16 w-full">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+        <img alt="User Profile" class="w-full h-full object-cover" src="assets/images/placeholder_user.png" />
+      </div>
+      <h1 class="text-xl font-black text-[#2a5d83] tracking-[-0.03em]">Clinical Azure</h1>
+    </div>
+    <button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-50 transition-colors active:scale-95 duration-200">
+      <span class="material-symbols-outlined text-slate-500">notifications</span>
+    </button>
+  </div>
+</header>
+
+<!-- Main Content Area -->
+<main class="flex-1 mt-16 mb-20 overflow-y-auto px-4 md:px-8 py-6 max-w-4xl mx-auto w-full flex flex-col gap-6">
+  <div class="flex justify-center">
+    <span class="text-[11px] font-bold uppercase tracking-widest text-[#4a5568]/50 bg-[#e7e8eb] px-3 py-1 rounded-full">Today</span>
+  </div>
+
+  <div class="flex flex-col gap-8">
+    <!-- User Message -->
+    <div class="flex flex-col items-end gap-2 max-w-[85%] self-end animate-in fade-in slide-in-from-right duration-500">
+      <div class="bg-primary text-white px-5 py-4 rounded-2xl rounded-tr-sm shadow-md">
+        <p class="leading-relaxed">I've been sneezing a lot since this morning. It's constant and my eyes are starting to feel itchy too. What could be causing this?</p>
+      </div>
+      <span class="text-[10px] font-medium text-ghost mr-1">09:41 AM</span>
+    </div>
+
+    <!-- AI Assistant Message -->
+    <div class="flex flex-col items-start gap-3 max-w-[90%] animate-in fade-in slide-in-from-left duration-500">
+      <div class="flex items-center gap-2 mb-1">
+        <div class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+        </div>
+        <span class="text-xs font-black tracking-tight text-primary uppercase">Clinical Assistant</span>
+      </div>
+      <div class="bg-white border border-primary/10 p-5 rounded-2xl rounded-tl-sm shadow-sm flex flex-col gap-4">
+        <p class="text-primary/80 leading-relaxed font-medium">Based on your symptoms of frequent sneezing combined with itchy eyes, this strongly suggests an allergic reaction, likely to airborne particles.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+          <div class="bg-primary/5 p-4 rounded-xl border border-primary/5 hover:border-accent/30 transition-colors">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="material-symbols-outlined text-accent">allergies</span>
+              <h3 class="font-bold text-sm text-primary">Seasonal Pollen</h3>
+            </div>
+            <p class="text-xs text-ghost font-medium leading-normal">Tree and grass pollen levels are currently "High" in your area today.</p>
+          </div>
+          <div class="bg-primary/5 p-4 rounded-xl border border-primary/5 hover:border-accent/30 transition-colors">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="material-symbols-outlined text-accent">house</span>
+              <h3 class="font-bold text-sm text-primary">Dust Mites</h3>
+            </div>
+            <p class="text-xs text-ghost font-medium leading-normal">Common indoor triggers if symptoms worsen while cleaning or waking up.</p>
+          </div>
+        </div>
+        <p class="text-primary/80 leading-relaxed font-medium">Have you been outdoors recently, or perhaps introduced a new pet or plant to your environment?</p>
+      </div>
+      <span class="text-[10px] font-medium text-ghost ml-1">09:42 AM</span>
+    </div>
+
+    <!-- Typing Indicator -->
+    <div *ngIf="isAiTyping" class="flex flex-col items-start gap-3 max-w-[90%] animate-pulse">
+      <div class="flex items-center gap-2 mb-1">
+        <div class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary text-sm">more_horiz</span>
+        </div>
+        <span class="text-[10px] font-bold text-primary uppercase">Assistant is analyzing...</span>
+      </div>
+    </div>
+
+    <!-- Suggested Actions -->
+    <div class="flex flex-wrap gap-2 mt-4 px-2">
+      <button *ngFor="let chip of suggestionChips" 
+              (click)="sendChip(chip)"
+              class="px-4 py-2 rounded-full border border-primary/10 bg-white text-primary text-xs font-bold hover:bg-primary hover:text-white transition-all shadow-sm active:scale-95">
+        {{ chip }}
+      </button>
+    </div>
+  </div>
+</main>
+
+<!-- Chat Input Floating Field -->
+<div class="fixed bottom-24 left-0 w-full px-4 md:px-8 z-40">
+  <div class="max-w-4xl mx-auto">
+    <div class="bg-white/95 backdrop-blur-xl border border-primary/10 rounded-2xl shadow-xl p-2 flex items-center gap-2">
+      <button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors">
+        <span class="material-symbols-outlined">add_circle</span>
+      </button>
+      <input class="flex-1 bg-transparent border-none focus:ring-0 text-[#121516] placeholder:text-slate-400 py-3 px-2" placeholder="Describe your symptoms..." type="text"/>
+      <button class="bg-primary text-white w-10 h-10 rounded-xl flex items-center justify-center shadow-md active:scale-90 transition-transform">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-white/90 backdrop-blur-md border-t border-primary/10 shadow-lg px-2 h-20 flex justify-around items-center">
+  <a routerLink="/" class="flex flex-col items-center justify-center text-slate-400 hover:text-primary transition-all">
+    <span class="material-symbols-outlined">home</span>
+    <span class="text-[11px] font-bold uppercase tracking-wider mt-1">Home</span>
+  </a>
+  <a routerLink="/symptom-log" class="flex flex-col items-center justify-center text-slate-400 hover:text-primary transition-all">
+    <span class="material-symbols-outlined">medical_services</span>
+    <span class="text-[11px] font-bold uppercase tracking-wider mt-1">Checker</span>
+  </a>
+  <a routerLink="/history" class="flex flex-col items-center justify-center text-slate-400 hover:text-primary transition-all">
+    <span class="material-symbols-outlined">history</span>
+    <span class="text-[11px] font-bold uppercase tracking-wider mt-1">History</span>
+  </a>
+  <a routerLink="/ai-chat" class="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-2xl px-4 py-2">
+    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+    <span class="text-[11px] font-bold uppercase tracking-wider mt-1">AI Chat</span>
+  </a>
+  <a routerLink="/profile" class="flex flex-col items-center justify-center text-slate-400 hover:text-primary transition-all">
+    <span class="material-symbols-outlined">person</span>
+    <span class="text-[11px] font-bold uppercase tracking-wider mt-1">Profile</span>
+  </a>
+</nav>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Allergy Checker - Empower Your Health</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2a5d83",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#141a1e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#121516] font-display">
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-primary/10 px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined text-2xl block">health_metrics</span>
+</div>
+<span class="text-primary font-bold text-lg tracking-tight">AllergyCare</span>
+</div>
+<button class="text-primary p-2 hover:bg-primary/5 rounded-full transition-colors">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</nav>
+<!-- Navigation Menu (Visual Mockup of Expanded State Hidden) -->
+<!-- Home, Symptom Input, Contact, FAQ links would be here -->
+<main class="w-full max-w-md mx-auto bg-white min-h-screen shadow-sm">
+<!-- Hero Section -->
+<header class="@container">
+<div class="flex flex-col gap-6 px-6 py-12 @[480px]:gap-8">
+<div class="w-full bg-center bg-no-repeat aspect-[16/10] bg-cover rounded-xl shadow-lg overflow-hidden border border-primary/10" data-alt="Professional medical doctor consulting with a patient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4uTv_YJfvjQyu4HKSEJIiMb4qNrQcq7ALkzvydbRGsIw0blg_7v_CbVeAkW_TZ3dwUNi_f_ZgVw1owgTutNC_FJ_Jl5tB2VR186Kynb5W8pCuuADafEw0XdwElCG6kyQk9pPO96vDv6OPmV8h-YURxmaO7P7rVT7E8rDKXs69tpd6BA83baauGpMgNL0yuOFPoA1hud6bKwWDaBoPYksfF5DJ5V8pIpl2kOzfRdLM9l-tsd9zW2e5Qwy9MSkhB6I1Ywdodz5LBMI");'>
+</div>
+<div class="flex flex-col gap-4 text-left">
+<h1 class="text-primary text-4xl font-black leading-[1.1] tracking-[-0.03em]">
+                        Empower Your Health: Identify Your Allergy Triggers
+                    </h1>
+<p class="text-[#4a5568] text-lg font-normal leading-relaxed">
+                        Our intelligent tool helps you track symptoms and find relief faster through personalized clinical insights.
+                    </p>
+<div class="pt-4">
+<button class="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-6 bg-primary text-white text-lg font-bold shadow-md hover:bg-primary/90 active:scale-[0.98] transition-all">
+<span class="truncate">Get Started</span>
+<span class="material-symbols-outlined ml-2">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- How It Works Section -->
+<section class="bg-background-light/50 py-12 px-6">
+<h2 class="text-primary text-2xl font-extrabold leading-tight tracking-tight mb-8">How It Works</h2>
+<div class="space-y-4">
+<!-- Step 1 -->
+<div class="flex gap-4 items-start bg-white p-5 rounded-xl border border-primary/5 shadow-sm">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">clinical_notes</span>
+</div>
+<div class="flex flex-col">
+<h3 class="text-primary text-lg font-bold leading-tight">Input Symptoms</h3>
+<p class="text-[#6a7781] text-base font-normal leading-normal mt-1">
+                            Describe what you are feeling in our easy-to-use symptom logger.
+                        </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex gap-4 items-start bg-white p-5 rounded-xl border border-primary/5 shadow-sm">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">query_stats</span>
+</div>
+<div class="flex flex-col">
+<h3 class="text-primary text-lg font-bold leading-tight">Analyze Data</h3>
+<p class="text-[#6a7781] text-base font-normal leading-normal mt-1">
+                            Our intelligent system cross-references local triggers and your data.
+                        </p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex gap-4 items-start bg-white p-5 rounded-xl border border-primary/5 shadow-sm">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">verified_user</span>
+</div>
+<div class="flex flex-col">
+<h3 class="text-primary text-lg font-bold leading-tight">Get Tailored Results</h3>
+<p class="text-[#6a7781] text-base font-normal leading-normal mt-1">
+                            Receive a personalized health report with actionable relief steps.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Feature Section -->
+<section class="p-6">
+<div class="flex flex-col items-center text-center gap-6 rounded-2xl bg-primary px-6 py-10 shadow-xl relative overflow-hidden">
+<!-- Decorative Circle -->
+<div class="absolute -right-10 -top-10 size-40 bg-white/10 rounded-full"></div>
+<div class="relative z-10 flex flex-col gap-2">
+<p class="text-white text-2xl font-bold leading-tight">Ready to find relief?</p>
+<p class="text-white/80 text-base font-normal leading-relaxed">
+                        Join thousands of users who have successfully identified their triggers and improved their quality of life.
+                    </p>
+</div>
+<button class="relative z-10 w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-white text-primary text-base font-bold shadow-lg hover:bg-white/95 transition-colors">
+<span class="truncate">Start Symptom Check</span>
+</button>
+</div>
+</section>
+<!-- Secondary Info Cards -->
+<section class="grid grid-cols-2 gap-4 px-6 pb-12">
+<div class="flex flex-col gap-3 p-4 bg-primary/5 rounded-xl border border-primary/10 text-center">
+<span class="material-symbols-outlined text-primary text-3xl mx-auto">contact_support</span>
+<span class="text-primary text-sm font-bold">FAQ &amp; Support</span>
+</div>
+<div class="flex flex-col gap-3 p-4 bg-primary/5 rounded-xl border border-primary/10 text-center">
+<span class="material-symbols-outlined text-primary text-3xl mx-auto">contact_page</span>
+<span class="text-primary text-sm font-bold">Contact Us</span>
+</div>
+</section>
+<!-- Footer -->
+<footer class="border-t border-primary/10 py-8 px-6 text-center">
+<div class="flex justify-center gap-4 mb-4">
+<a class="text-primary/60 hover:text-primary" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-primary/60 hover:text-primary" href="#"><span class="material-symbols-outlined">info</span></a>
+</div>
+<p class="text-[#6a7781] text-xs font-medium">
+                © 2024 AllergyCare Symptom Tracker. 
+                <br/>Medical guidance is illustrative only.
+            </p>
+<div class="flex justify-center gap-6 mt-4 text-xs font-bold text-primary/80 uppercase tracking-widest">
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+</div>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile &amp; Settings - AllergyCare</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#633f00",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f0f0f4",
+                        "secondary-fixed-dim": "#b7c8db",
+                        "on-tertiary-container": "#121516",
+                        "on-surface-variant": "#4a5568",
+                        "background": "#f6f7f8",
+                        "tertiary-fixed": "#ffddb4",
+                        "on-primary-fixed-variant": "#114a70",
+                        "inverse-primary": "#9ccbf7",
+                        "error-container": "#ffdad6",
+                        "surface": "#f6f7f8",
+                        "surface-container-highest": "#e2e2e6",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#cce5ff",
+                        "primary-container": "#2a5d83",
+                        "primary": "#2a5d83",
+                        "surface-container": "#edeef1",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#ffffff",
+                        "surface-bright": "#ffffff",
+                        "surface-tint": "#2a5d83",
+                        "surface-container-high": "#e7e8eb",
+                        "on-secondary-fixed-variant": "#384858",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#edeef1",
+                        "inverse-surface": "#2e3133",
+                        "surface-bright": "#ffffff",
+                        "outline-variant": "rgba(42, 93, 131, 0.1)",
+                        "on-primary-fixed": "#001d31",
+                        "tertiary": "#6a7781",
+                        "tertiary-fixed-dim": "#f3bd74",
+                        "secondary": "#4a5568",
+                        "surface-dim": "#d9dadd",
+                        "on-secondary-container": "#2a5d83",
+                        "secondary-fixed": "#d3e4f8",
+                        "on-primary-container": "#ffffff",
+                        "on-tertiary-fixed": "#291800",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "rgba(42, 93, 131, 0.05)",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#9ccbf7",
+                        "on-surface": "#121516",
+                        "outline": "#72787f",
+                        "on-secondary-fixed": "#0b1d2b",
+                        "on-background": "#121516"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-blue-500/10 dark:border-blue-400/10 shadow-sm flex items-center justify-between px-6 h-16">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined text-[#2a5d83] dark:text-blue-400">arrow_back</span>
+</button>
+<h1 class="text-xl font-black text-[#2a5d83] dark:text-blue-400 tracking-[-0.03em] leading-[1.1]">Profile</h1>
+</div>
+<button class="active:scale-95 duration-200 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined text-[#2a5d83] dark:text-blue-400">settings</span>
+</button>
+</header>
+<main class="pt-20 px-4 space-y-6">
+<!-- Profile Header Section -->
+<section class="bg-surface-bright rounded-2xl p-6 shadow-sm border border-outline-variant">
+<div class="flex items-center gap-5">
+<div class="relative w-20 h-20 rounded-2xl overflow-hidden bg-primary-fixed flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a young man with a friendly expression wearing a clean white clinical shirt in a bright office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAMYHXt2eC6_tajuPbdO7nXRM8wRmj4LICMlJe6zhRJnY1MwybNkqOUuiWEdXrSWVWgXLJngnsKQxQx8E7BDrBtSgSPoi8DhmCtPtr1AEYSEkZwKEMAyjFLEX0PmPRGZGb5551oa3cdZfcchjyI2bMt_rR8Di7KOM2NkmzlZyv8cvYGCLRSpNJ-O4S61BaiugRGKNdLePp0RMb8wue126PC6AHkz_pnsjADdKZbM9WJbCj-4180g8bssKZdjQ6BTGYJjREys6wrOc"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<h2 class="text-2xl font-black tracking-tight text-on-surface">Alex Johnson</h2>
+<!-- RBAC Badge -->
+<span class="px-2 py-0.5 bg-secondary-container text-primary text-[10px] font-bold uppercase tracking-wider rounded-md border border-primary/10">User</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium">alex.johnson@healthcare.io</p>
+<p class="text-primary text-xs font-bold mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                        Verified Patient
+                    </p>
+</div>
+</div>
+</section>
+<!-- Account Settings Group -->
+<section class="space-y-3">
+<h3 class="px-2 text-xs font-black uppercase tracking-widest text-on-surface-variant/60">Account Settings</h3>
+<div class="bg-surface-bright rounded-2xl shadow-sm border border-outline-variant divide-y divide-outline-variant">
+<div class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-[0.98]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">person_edit</span>
+</div>
+<span class="font-bold text-on-surface">Edit Profile</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+<!-- This item implies potential Angular sub-routing -->
+<div class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-[0.98]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">lock_reset</span>
+</div>
+<span class="font-bold text-on-surface">Change Password</span>
+</div>
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Reactive Form: Change Password -->
+<section class="bg-secondary-container rounded-2xl p-6 border border-primary/5 shadow-inner">
+<form class="space-y-4">
+<div class="space-y-1">
+<label class="text-xs font-bold text-primary/80 ml-1">Current Password</label>
+<input class="w-full h-14 bg-surface-bright border-outline-variant rounded-xl px-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold text-primary/80 ml-1">New Password</label>
+<input class="w-full h-14 bg-surface-bright border-outline-variant rounded-xl px-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" placeholder="••••••••" type="password"/>
+<!-- Angular style validation message -->
+<p class="text-[11px] font-bold text-error flex items-center gap-1 mt-1 ml-1">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                        Password must be at least 8 characters
+                    </p>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold text-primary/80 ml-1">Confirm New Password</label>
+<input class="w-full h-14 bg-surface-bright border-outline-variant rounded-xl px-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" placeholder="••••••••" type="password"/>
+</div>
+<button class="w-full h-14 bg-primary text-white rounded-xl font-black shadow-md active:scale-95 transition-transform mt-2" type="submit">
+                    Update Password
+                </button>
+</form>
+</section>
+<!-- Notifications & Security Group -->
+<section class="space-y-3">
+<h3 class="px-2 text-xs font-black uppercase tracking-widest text-on-surface-variant/60">Privacy &amp; Alerts</h3>
+<div class="bg-surface-bright rounded-2xl shadow-sm border border-outline-variant divide-y divide-outline-variant overflow-hidden">
+<!-- Toggle: Allergy Alerts -->
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">emergency_home</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Allergy Alerts</p>
+<p class="text-[11px] text-on-surface-variant font-medium">Real-time pollen level spikes</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle: Weekly Reports -->
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Weekly Reports</p>
+<p class="text-[11px] text-on-surface-variant font-medium">Summary of your allergy triggers</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle: 2FA -->
+<div class="flex items-center justify-between p-4 bg-primary/5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">enhanced_encryption</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Two-Factor Auth</p>
+<p class="text-[11px] text-primary font-bold">Recommended for data safety</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Footer Action -->
+<section class="pb-10 pt-4">
+<button class="w-full h-14 bg-white border-2 border-error/10 text-error rounded-xl font-black shadow-sm active:scale-95 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">logout</span>
+                Sign Out
+            </button>
+<p class="text-center text-[10px] font-bold text-on-surface-variant/40 mt-6 tracking-widest uppercase">Version 2.4.1 (Clinical)</p>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-4 pb-safe bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-blue-500/5 dark:border-blue-400/5 shadow-lg z-50">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 active:scale-90 transition-transform hover:text-[#2a5d83]" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[12px] font-medium tracking-tight">Home</span>
+</a>
+<!-- Track -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 active:scale-90 transition-transform hover:text-[#2a5d83]" href="#">
+<span class="material-symbols-outlined">medical_services</span>
+<span class="text-[12px] font-medium tracking-tight">Track</span>
+</a>
+<!-- Insights -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 active:scale-90 transition-transform hover:text-[#2a5d83]" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[12px] font-medium tracking-tight">Insights</span>
+</a>
+<!-- Profile (Active) -->
+<a class="flex flex-col items-center justify-center text-[#2a5d83] dark:text-blue-300 bg-blue-50 dark:bg-blue-900/40 rounded-xl px-4 py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-[12px] font-medium tracking-tight">Profile</span>
+</a>
+</nav>
+</body></html>
